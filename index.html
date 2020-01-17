@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Editer votre document PDF</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="assets/index.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="assets/drop_area.css" type="text/css" charset="utf-8">
+    <meta name="description" content="modifiez a volonté vos document Pdf simplement et gratuitement">
+    <meta name="robots" content="index, follow" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a href="index.html" target="_top"><h1 class="navbar-brand">Paprass</h1></a>
+      <div>
+        <a href="crop_rect.html" target="_top">Extraire une partie d'un document</a>
+      </div>
+    </nav>
+
+    <div class="container-fluid"> 
+      <div class="row">
+
+        <div class="col-2">
+          <div class="card position-sticky invisible visibleOnDisplayFile p-2" style="top: 45vh">	
+            <div id="page-mode">
+              <p class="text-center text-muted">Page <span>0</span></p>
+            </div>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div id="pager" role="group" class="w-100 d-flex justify-content-around">
+                <button type="button" class="btn btn-primary" id="prev">page d'avant</button>
+                <button type="button" class="btn btn-primary" id="next">prochaine page</button>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="file" class="invisible" name="image" id="input_image"/>
+              <label class="button" for="input_image">ajouter une nouvelle image</label>
+              <button class="btn btn-info btn-block mt-4"id='generator'>récuperer le(s) document(s) modifié(s)</button>
+            </div>
+          </div>
+        </div>
+
+        <div id='main_container' class="col-8"> 
+          <!-- are going to be add here
+            <div id="viewport"></div>
+            <div id="container"></div> 
+          -->
+          <div id="drop-area">
+            <input type="file" class="invisible" id="fileElem" accept="application/pdf">
+            <label class='h-100 w-100 d-flex justify-content-center' for="fileElem"> 
+              <div class="card w-75 align-items-center justify-content-around border-0" style='background-color: inherit' >
+                <div class="d-flex flex-column align-items-center">  
+                  <img class="card-img-top w-25" src="assets/pictures/dropFile.png" alt="drop file icon"/>   
+                  <p class="card-text text-center">Vous pouvez cliquer ici ou drop hover le/les documents PDF que vous voulez modifiez</p>
+                </div>
+                <div class="w-75"> 
+                  <div class="d-flex">  
+                    <img src="assets/pictures/zoneCreation.gif" alt='action pour produire une zone' class="w-50"  />
+                    <p class="w-50 text-justify">-Vous pourrez ensuite ajouter une zone de texte au dessus du document de cette façon </p>
+                  </div>
+                  <p class="card-text text-justify"> -Vous pourrez aussi rajouter des images en les droppants au dessus du document affiché</p>
+                </div>
+              </div>
+           </label>
+          </div>
+        </div>
+
+        <div class="col-2">
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id='modal_text' class="modal" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Parametre du texte </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label>taille du texte</label>
+            <input type="number" value="" name="fontSize" id=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
+    <!--
+    <script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
+    <script src="https://unpkg.com/pdfjs-dist@latest/build/pdf.min.js"></script>
+    <script charset="utf-8" src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script charset="utf-8" src='zone_manager/_text.js'></script>         
+    <script charset="utf-8" src='zone_manager/_image.js'></script>        
+    <script charset="utf-8" src='draw_rectangle.js'></script>             
+    <script charset="utf-8" src='zone_manager/input_manager.js'></script>  
+    <script charset="utf-8" src='display_file/drop_area.js'></script>      
+    <script charset="utf-8" src='display_file/viewport.js'></script>       
+    <script charset="utf-8" src='pdf_generator.js' ></script>              
+    -->
+    <script charset="utf-8" src='dist/index.js'></script>
+  </body>
+</html>

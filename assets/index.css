@@ -1,0 +1,25 @@
+
+.invisible {
+  display: none;
+}
+
+#container {
+  position: absolute;
+  width: 100%!important;
+  height: 100%!important;
+  top: 0;
+}
+
+
+#container canvas {
+  z-index: 500;
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: #369;
+}

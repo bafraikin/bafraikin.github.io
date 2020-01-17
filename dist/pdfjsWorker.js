@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{123:function(n,o,e){n.exports=function(){return new Worker(e.p+"index.worker.js")}}}]);

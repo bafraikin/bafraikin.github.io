@@ -1,0 +1,36 @@
+
+.invisible {
+  display: none;
+}
+
+#container {
+  position: absolute;
+  width: 100%!important;
+  height: 100%!important;
+  top: 0;
+}
+
+a#basic {
+	width: 3vw;
+	height: 3vw;
+}
+
+#container canvas {
+  z-index: 500;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: #369;
+}
+
+
+#fixed {
+    display: table;
+    padding: 1em;
+    border: 1px solid silver
+}
+

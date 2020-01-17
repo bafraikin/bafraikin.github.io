@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Extraire zone d'une image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="assets/drop_area.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="assets/crop_rect.css" type="text/css" media="screen" charset="utf-8">
+    <meta name="description" content="Pratique pour récuperer une partie d'un document informatisé sous forme d'image pour pouvoir la reutiliser ensuite">
+    <meta name="robots" content="index, follow" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a href="index.html" target="_top"><h1 class="navbar-brand">Paprass</h1></a>
+    </nav>
+
+    <div class="container-fluid"> 
+      <div class="row">
+
+        <div class="col-2">
+          <div class="card position-sticky invisible visibleOnDisplayFile p-2" style="top: 45vh">	
+            <div id="page-mode">
+              <p class="text-center text-muted">Page <span>0</span></p>
+            </div>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div id="pager" role="group" class="w-100 d-flex justify-content-around">
+                <button type="button" class="btn btn-primary" id="prev">prochaine page</button>
+                <button type="button" class="btn btn-primary" id="next">page d'avant</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id='main_container' class="col-8"> 
+          <!-- are going to be add here
+            <div id="viewport"></div>
+            <div id="container"></div> 
+          -->
+          <div id="drop-area">
+            <input type="file" class="invisible" id="fileElem" accept="application/pdf">
+            <label class='h-100 w-100 d-flex justify-content-center' for="fileElem"> 
+              <div class="card w-75 align-items-center justify-content-around border-0" style='background-color: inherit' >
+                <div class="d-flex flex-column align-items-center">  
+                  <img class="card-img-top w-25" src="assets/pictures/dropFile.png" alt="drop file icon"/>   
+                  <p class="card-text text-center">Vous pouvez cliquer ici ou drop hover le/les documents PDF que vous voulez afficher pour en recuperer une partie</p>
+                </div>
+                <div class="w-75"> 
+                  <div class="d-flex">  
+                    <img src="assets/pictures/zoneCreation.gif" alt='action pour produire une zone' class="w-50"  />
+                    <p class="w-50 text-justify">-Vous pourrez ensuite definir une zone a recuperer de cette facon </p>
+                  </div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="invisible visibleOnDisplayFile card position-sticky" style='top:45vh'>
+            <div class="m-2"> 
+              <p class="text-center">Vous pouvez choisir de rendre transparente une couleur de la zone selectionnée sur le document</p>
+              <input class="text-center" id="pickerButton" type="checkbox" unchecked/>
+            </div>
+            <div class="card invisible" style="width: 18rem;" id="colorPicker">
+              <div class="card-body">
+                <p class="card-text"> Selectionnez la couleur a rendre transparente</p>
+                <div class="text-center max-width" >	
+                  <a href="#" class="button" id="basic"></a>
+                </div>
+                <div class="form-group">
+                  <label>seuil de tolerance</label>
+                  <input type="number" value="0" max=100 min="0" name="" id="treshold"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end of row -->	
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script charset="utf-8" src='dist/crop_rect.js'></script>
+  </body>
+</html>
